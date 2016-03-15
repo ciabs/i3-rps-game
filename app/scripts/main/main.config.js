@@ -14,6 +14,11 @@
                 controller: 'HomeCtrl',
                 controllerAs: 'homeC'
             })
+            .when('/game', {
+                templateUrl: 'scripts/game/game.template.html',
+                controller: 'GameCtrl',
+                controllerAs: 'gameC'
+            })
             .when('/about', {
                 templateUrl: 'views/about.html',
                 controller: 'AboutCtrl',
