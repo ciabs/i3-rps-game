@@ -12,14 +12,20 @@
         .module('i3RpsGameApp.main')
         .controller('MainCtrl', MainCtrl);
 
-    MainCtrl.$inject = [];
+    MainCtrl.$inject = ['GameService'];
     /* @ngInject */
-    function MainCtrl() {
+    function MainCtrl(GameService) {
         var vm = this;
+        vm.gameStatus = {};
 
         activate();
 
         function activate() {
+            getGameStatus();
+        }
+
+        function getGameStatus() {
+            vm.gameStatus = GameService.getGameStatus();
         }
     }
 })();
