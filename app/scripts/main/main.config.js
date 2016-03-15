@@ -10,9 +10,9 @@
     function configure($routeProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'scripts/main/main.template.html',
-                controller: 'MainCtrl',
-                controllerAs: 'main'
+                templateUrl: 'scripts/home/home.template.html',
+                controller: 'HomeCtrl',
+                controllerAs: 'homeC'
             })
             .when('/about', {
                 templateUrl: 'views/about.html',
