@@ -5,7 +5,7 @@
      * @ngdoc function
      * @name i3RpsGameApp.game.controller:GameCtrl
      * @description
-     * # HomeCtrl
+     * # GameCtrl
      * Game controller of the i3RpsGameApp
      */
     angular
@@ -37,6 +37,8 @@
             vm.gameStatus.gameNumber++;
             if (vm.gameResult == 1) { vm.gameStatus.win++; }
             if (vm.gameResult == -1) { vm.gameStatus.lose++; }
+
+            GameService.updateGameStatus();
         }
 
         function computerChooseShape() {

@@ -92,4 +92,14 @@ body {
 /* Game page */
 .shape {
   cursor: pointer;
+  border: solid 5px #eeeeee;
+  border-radius: 10px;
+}
+
+.selected-shape {
+  border-color: green;
+}
+
+hr {
+  border-color: #d5d5d5;
 }
