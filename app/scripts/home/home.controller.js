@@ -17,6 +17,7 @@
     function HomeCtrl(GameService, $location) {
         var vm = this;
         vm.gameStatus = {};
+        vm.highScore = {};
         vm.startNewGame = startNewGame;
         vm.continueGame = continueGame;
 
@@ -24,10 +25,16 @@
 
         function activate() {
             getGameStatus();
+            getHighScore();
         }
 
         function getGameStatus() {
             vm.gameStatus = GameService.getGameStatus();
+        }
+
+        function getHighScore() {
+            console.log('asd');
+            vm.highScore = GameService.getHighScore();
         }
 
         function startNewGame() {
