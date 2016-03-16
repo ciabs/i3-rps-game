@@ -35,11 +35,11 @@
             vm.computerIsThinking = true;
 
             $timeout(function() {
-                myFunction();
+                compute();
             }, 3000);
         }
 
-        function myFunction() {
+        function compute() {
             vm.computerShape = computerChooseShape();
             vm.gameResult = getGameResult(vm.playerShape, vm.computerShape);
 

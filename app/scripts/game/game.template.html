@@ -1,9 +1,9 @@
 <div class="jumbotron">
     <div class="row">
-        <div class="col-xs-4">
+        <div class="col-sm-4 col-xs-6">
             <h4><span class="label label-success">{{ gameC.gameStatus.win }}</span> Player</h4>
         </div>
-        <div class="col-xs-4 col-xs-offset-4">
+        <div class="col-sm-4 col-xs-6 col-sm-offset-4">
             <h4>Computer <span class="label label-primary">{{ gameC.gameStatus.lose }}</span></h4>
         </div>
     </div>
@@ -57,9 +57,9 @@
 
         <hr />
 
-        <h1 ng-if="gameC.gameResult == 1">YOU WIN</h1>
-        <h1 ng-if="gameC.gameResult == -1">YOU LOSE</h1>
-        <h1 ng-if="gameC.gameResult == 0">DRAW</h1>
+        <h1 ng-if="gameC.gameResult == 1" style="color: green">YOU WIN</h1>
+        <h1 ng-if="gameC.gameResult == -1" style="color: red">YOU LOSE</h1>
+        <h1 ng-if="gameC.gameResult == 0"  style="color: orange">DRAW</h1>
     </div>
 
     <hr />

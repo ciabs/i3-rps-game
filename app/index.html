@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>i3 rock, paper, scissors game</title>
+    <title>i3 rock x paper x scissors game</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -20,17 +20,13 @@
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
-<div header></div>
+<div header ng-controller="HeaderCtrl as headerC"></div>
 
 <div class="container">
     <div ng-view=""></div>
 </div>
 
-<div class="footer">
-    <div class="container">
-        <p>Made by <a href="mailto:francesco.fiori@gmail.com">francesco.fiori@gmail.com</a></p>
-    </div>
-</div>
+<div footer></div>
 
 <!-- build:js(.) scripts/vendor.js -->
 <!-- bower:js -->
@@ -51,6 +47,7 @@
 <script src="scripts/main/main.module.js"></script>
 <script src="scripts/home/home.module.js"></script>
 <script src="scripts/header/header.module.js"></script>
+<script src="scripts/footer/footer.module.js"></script>
 <script src="scripts/game/game.module.js"></script>
 <script src="scripts/main/main.config.js"></script>
 <script src="scripts/main/main.controller.js"></script>
@@ -58,6 +55,8 @@
 <script src="scripts/home/home.controller.js"></script>
 <script src="scripts/game/game.controller.js"></script>
 <script src="scripts/header/header.directive.js"></script>
+<script src="scripts/header/header.controller.js"></script>
+<script src="scripts/footer/footer.directive.js"></script>
 <!-- endbuild -->
 </body>
 </html>
