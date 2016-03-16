@@ -44,8 +44,8 @@
             vm.gameResult = getGameResult(vm.playerShape, vm.computerShape);
 
             vm.gameStatus.gameNumber++;
-            if (vm.gameResult == 1) { vm.gameStatus.win++; }
-            if (vm.gameResult == -1) { vm.gameStatus.lose++; }
+            if (vm.gameResult === 1) { vm.gameStatus.win++; }
+            if (vm.gameResult === -1) { vm.gameStatus.lose++; }
 
             GameService.updateGameStatus();
             vm.computerIsThinking = false;
@@ -56,16 +56,16 @@
         }
 
         function getGameResult(shape1, shape2) {
-            if (shape1 == shape2) {
+            if (shape1 === shape2) {
                 return 0;
             }
             switch (shape1) {
                 case 'r':
-                    return (shape2 == 's' ? 1 : -1);
+                    return (shape2 === 's' ? 1 : -1);
                 case 'p':
-                    return (shape2 == 'r' ? 1 : -1);
+                    return (shape2 === 'r' ? 1 : -1);
                 case 's':
-                    return (shape2 == 'p' ? 1 : -1);
+                    return (shape2 === 'p' ? 1 : -1);
             }
         }
     }

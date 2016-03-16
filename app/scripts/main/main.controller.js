@@ -12,14 +12,19 @@
         .module('i3RpsGameApp.main')
         .controller('MainCtrl', MainCtrl);
 
-    MainCtrl.$inject = [];
+    MainCtrl.$inject = ['$scope', '$location'];
     /* @ngInject */
-    function MainCtrl() {
+    function MainCtrl($scope, $location) {
         var vm = this;
 
         activate();
 
         function activate() {
+            $scope.$watch(angular.bind(this, function () {
+                return $location.path();
+            }), function (newVal) {
+                vm.route = newVal;
+            });
         }
     }
 })();
