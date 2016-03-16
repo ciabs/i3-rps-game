@@ -17,15 +17,21 @@
     function MainCtrl(GameService) {
         var vm = this;
         vm.gameStatus = {};
+        vm.highScore = {};
 
         activate();
 
         function activate() {
             getGameStatus();
+            getHighScore();
         }
 
         function getGameStatus() {
             vm.gameStatus = GameService.getGameStatus();
+        }
+
+        function getHighScore() {
+            vm.highScore = GameService.getHighScore();
         }
     }
 })();

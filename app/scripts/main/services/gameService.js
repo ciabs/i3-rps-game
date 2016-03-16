@@ -18,9 +18,11 @@
         var service = {
                 getGameStatus: getGameStatus,
                 updateGameStatus: updateGameStatus,
-                newGame: newGame
+                newGame: newGame,
+                getHighScore: getHighScore
             },
-            gameStatus;
+            gameStatus,
+            highScore;
 
         return service;
 
@@ -41,21 +43,44 @@
             return gameStatus;
         }
 
+        function getHighScore() {
+            return getHighScoreFromCookie();
+        }
+
+        function getHighScoreFromCookie() {
+            if (typeof $cookieStore.get('highScore') == "undefined") {
+                highScore = 0;
+            } else {
+                highScore = $cookieStore.get('highScore');
+            }
+            return highScore;
+        }
+
         function newGame() {
             gameStatus = {
                 gameNumber: 0,
                 win: 0,
                 lose: 0
             };
-            persistToCookie();
+            persistGameStatusToCookie();
             return gameStatus;
         }
 
         function updateGameStatus() {
-            persistToCookie();
+            persistGameStatusToCookie();
+            checkHighScore();
             return gameStatus;
         }
 
-        function persistToCookie() { $cookieStore.put('gameStatus', gameStatus); }
+        function checkHighScore() {
+            if (gameStatus.win > highScore) {
+                highScore = gameStatus.win;
+                persistHighScoreToCookie();
+            }
+        }
+
+        function persistGameStatusToCookie() { $cookieStore.put('gameStatus', gameStatus); }
+
+        function persistHighScoreToCookie() { $cookieStore.put('highScore', highScore); }
     }
 })();
