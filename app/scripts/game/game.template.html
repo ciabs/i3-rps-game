@@ -13,19 +13,19 @@
     <p>choose your shape</p>
     <div class="row">
         <div class="col-xs-4 shape"
-             ng-click="gameC.chooseShape('r')"
+             ng-click="gameC.computerIsThinking || gameC.chooseShape('r')"
              ng-class="{'selected-shape': gameC.playerShape == 'r'}">
             <i class="fa fa-3x fa-hand-rock-o"></i>
             <h4>rock</h4>
         </div>
         <div class="col-xs-4 shape"
-             ng-click="gameC.chooseShape('p')"
+             ng-click="gameC.computerIsThinking || gameC.chooseShape('p')"
              ng-class="{'selected-shape': gameC.playerShape == 'p'}">
             <i class="fa fa-3x fa-hand-paper-o"></i>
             <h4>paper</h4>
         </div>
         <div class="col-xs-4 shape"
-             ng-click="gameC.chooseShape('s')"
+             ng-click="gameC.computerIsThinking || gameC.chooseShape('s')"
              ng-class="{'selected-shape': gameC.playerShape == 's'}">
             <i class="fa fa-3x fa-hand-scissors-o"></i>
             <h4>scissors</h4>
