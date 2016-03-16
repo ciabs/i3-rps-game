@@ -15,7 +15,8 @@
     function header() {
         var directive = {
             restrict: 'EA',
-            templateUrl: '/scripts/header/header.template.html'
+            templateUrl: '/scripts/header/header.template.html',
+            controller: 'HeaderCtrl'
         };
 
         return directive;
