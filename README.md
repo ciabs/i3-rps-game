@@ -1,12 +1,11 @@
 # i3-rps-game
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.15.1.
+Rock x paper x scissors game for i3 js test.
+
+* AngularJS
+* Bootstrap x Sass
+* Font awesome
 
 ## Build & development
 
 Run `grunt` for building and `grunt serve` for preview.
-
-## Testing
-
-Running `grunt test` will run the unit tests with karma.
