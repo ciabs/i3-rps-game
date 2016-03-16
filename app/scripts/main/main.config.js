@@ -20,9 +20,7 @@
                 controllerAs: 'gameC'
             })
             .when('/about', {
-                templateUrl: 'views/about.html',
-                controller: 'AboutCtrl',
-                controllerAs: 'about'
+                templateUrl: 'scripts/about/about.template.html'
             })
             .otherwise({
                 redirectTo: '/'

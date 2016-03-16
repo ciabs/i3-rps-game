@@ -2,21 +2,19 @@
     <div class="navbar navbar-default" role="navigation">
         <div class="container">
             <div class="navbar-header">
-
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-
-                <a class="navbar-brand" href="#/">i3 RPS Game</a>
+                <a class="navbar-brand" href="#/">RxPxS</a>
             </div>
-
             <div class="collapse navbar-collapse" id="js-navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li ng-class="{active: headerC.route != '/game'}"><a href="#/">Home</a></li>
-                    <li ng-class="{active: headerC.route == '/game'}"><a ng-href="#/game">Game</a></li>
+                    <li ng-class="{active: headerC.route == '/'}"><a href="#/">HOME</a></li>
+                    <li ng-class="{active: headerC.route == '/game'}"><a ng-href="#/game">PLAY</a></li>
+                    <li ng-class="{active: headerC.route == '/about'}"><a ng-href="#/about">ABOUT</a></li>
                 </ul>
             </div>
         </div>

@@ -33,7 +33,6 @@
         }
 
         function getHighScore() {
-            console.log('asd');
             vm.highScore = GameService.getHighScore();
         }
 

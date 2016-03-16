@@ -16,7 +16,6 @@
     /* @ngInject */
     function HeaderCtrl($location, $scope) {
         var vm = this;
-        console.log($location.path());
 
         activate();
 
