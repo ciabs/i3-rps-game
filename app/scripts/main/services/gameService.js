@@ -17,7 +17,8 @@
     function GameService($cookieStore) {
         var service = {
                 getGameStatus: getGameStatus,
-                updateGameStatus: updateGameStatus
+                updateGameStatus: updateGameStatus,
+                newGame: newGame
             },
             gameStatus;
 
@@ -30,7 +31,6 @@
         function getGameStatusFromCookie() {
             if (typeof $cookieStore.get('gameStatus') == "undefined") {
                 gameStatus = {
-                    gameSelected: null,
                     gameNumber: 0,
                     win: 0,
                     lose: 0
@@ -38,6 +38,16 @@
             } else {
                 gameStatus = $cookieStore.get('gameStatus');
             }
+            return gameStatus;
+        }
+
+        function newGame() {
+            gameStatus = {
+                gameNumber: 0,
+                win: 0,
+                lose: 0
+            };
+            persistToCookie();
             return gameStatus;
         }
 

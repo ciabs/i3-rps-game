@@ -29,10 +29,8 @@
             vm.gameStatus = GameService.getGameStatus();
         }
 
-        function startGame(gameSelected) {
-            vm.gameStatus.gameSelected = gameSelected;
-            vm.gameStatus.game = 1;
-            GameService.updateGameStatus();
+        function startGame() {
+            GameService.newGame();
             $location.path('game');
         }
     }

@@ -32,7 +32,13 @@
         </div>
     </div>
 
-    <div ng-if="gameC.gameResult != null">
+    <div ng-if="gameC.computerIsThinking">
+        <hr />
+        <p>computer is thinking</p>
+        <i class="fa fa-3x fa-cog fa-spin"></i> <i class="fa  fa-3x fa-cog fa-spin"></i> <i class="fa fa-3x fa-cog fa-spin"></i>
+    </div>
+
+    <div ng-if="gameC.gameResult != null && !gameC.computerIsThinking">
         <hr />
 
         <p>computer has chosen</p>
@@ -63,8 +69,5 @@
 
     <hr />
 
-    <div class="col-xs-4 col-xs-offset-4">
-        <h4>game <span class="label label-info">{{ gameC.gameStatus.gameNumber }}</span></h4>
-    </div>
-
+    <h4>game <span class="label label-info">{{ gameC.gameStatus.gameNumber }}</span></h4>
 </div>
