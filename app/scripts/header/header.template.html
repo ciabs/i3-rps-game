@@ -10,15 +10,13 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <a class="navbar-brand" href="#/">i3 Rps Game</a>
+                <a class="navbar-brand" href="#/">i3 RPS Game</a>
             </div>
 
             <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#/">Home</a></li>
-                    <li><a ng-href="#/about">About</a></li>
-                    <li><a ng-href="#/">Contact</a></li>
+                    <li ng-class="{active: $location.path() != 'game'}"><a href="#/">Home</a></li>
+                    <li ng-class="{active: $location.path() == 'game'}"><a ng-href="#/game">Game</a></li>
                 </ul>
             </div>
         </div>
