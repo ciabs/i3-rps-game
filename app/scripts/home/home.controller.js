@@ -17,7 +17,8 @@
     function HomeCtrl(GameService, $location) {
         var vm = this;
         vm.gameStatus = {};
-        vm.startGame = startGame;
+        vm.startNewGame = startNewGame;
+        vm.continueGame = continueGame;
 
         activate();
 
@@ -29,10 +30,12 @@
             vm.gameStatus = GameService.getGameStatus();
         }
 
-        function startGame(gameSelected) {
-            vm.gameStatus.gameSelected = gameSelected;
-            vm.gameStatus.game = 1;
-            GameService.updateGameStatus();
+        function startNewGame() {
+            GameService.newGame();
+            $location.path('game');
+        }
+
+        function continueGame() {
             $location.path('game');
         }
     }

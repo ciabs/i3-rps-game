@@ -10,47 +10,49 @@
 
     <hr />
 
-    {{ gameC.gameStatus }}
-
     <p>choose your shape</p>
     <div class="row">
-        <div class="col-xs-2 col-xs-offset-3 shape"
-             ng-click="gameC.chooseShape('r')">
+        <div class="col-xs-4 shape"
+             ng-click="gameC.chooseShape('r')"
+             ng-class="{'selected-shape': gameC.playerShape == 'r'}">
             <i class="fa fa-3x fa-hand-rock-o"></i>
             <h4>rock</h4>
         </div>
-        <div class="col-xs-2 shape"
-             ng-click="gameC.chooseShape('p')">
+        <div class="col-xs-4 shape"
+             ng-click="gameC.chooseShape('p')"
+             ng-class="{'selected-shape': gameC.playerShape == 'p'}">
             <i class="fa fa-3x fa-hand-paper-o"></i>
             <h4>paper</h4>
         </div>
-        <div class="col-xs-2 shape"
-             ng-click="gameC.chooseShape('s')">
+        <div class="col-xs-4 shape"
+             ng-click="gameC.chooseShape('s')"
+             ng-class="{'selected-shape': gameC.playerShape == 's'}">
             <i class="fa fa-3x fa-hand-scissors-o"></i>
             <h4>scissors</h4>
         </div>
     </div>
 
-    <div ng-if="gameC.gameResult != null">
+    <div ng-if="gameC.computerIsThinking">
+        <hr />
+        <p>computer is thinking</p>
+        <i class="fa fa-3x fa-cog fa-spin"></i> <i class="fa  fa-3x fa-cog fa-spin"></i> <i class="fa fa-3x fa-cog fa-spin"></i>
+    </div>
+
+    <div ng-if="gameC.gameResult != null && !gameC.computerIsThinking">
         <hr />
 
         <p>computer has chosen</p>
-        <div class="row">
-            <div class="col-xs-2 col-xs-offset-5 shape"
-                 ng-if="gameC.computerShape == 'r'">
-                <i class="fa fa-3x fa-hand-rock-o"></i>
-                <h4>rock</h4>
-            </div>
-            <div class="col-xs-2 col-xs-offset-5 shape"
-                 ng-if="gameC.computerShape == 'p'">
-                <i class="fa fa-3x fa-hand-paper-o"></i>
-                <h4>paper</h4>
-            </div>
-            <div class="col-xs-2 col-xs-offset-5 shape"
-                 ng-if="gameC.computerShape == 's'">
-                <i class="fa fa-3x fa-hand-scissors-o"></i>
-                <h4>scissors</h4>
-            </div>
+        <div ng-if="gameC.computerShape == 'r'">
+            <i class="fa fa-3x fa-hand-rock-o"></i>
+            <h4>rock</h4>
+        </div>
+        <div ng-if="gameC.computerShape == 'p'">
+            <i class="fa fa-3x fa-hand-paper-o"></i>
+            <h4>paper</h4>
+        </div>
+        <div ng-if="gameC.computerShape == 's'">
+            <i class="fa fa-3x fa-hand-scissors-o"></i>
+            <h4>scissors</h4>
         </div>
 
         <hr />
@@ -62,8 +64,5 @@
 
     <hr />
 
-    <div class="col-xs-4 col-xs-offset-4">
-        <h4>game <span class="label label-info">{{ gameC.gameStatus.gameNumber }}</span></h4>
-    </div>
-
+    <h4>game <span class="label label-info">{{ gameC.gameStatus.gameNumber }}</span></h4>
 </div>

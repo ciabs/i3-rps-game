@@ -5,19 +5,20 @@
      * @ngdoc function
      * @name i3RpsGameApp.game.controller:GameCtrl
      * @description
-     * # HomeCtrl
+     * # GameCtrl
      * Game controller of the i3RpsGameApp
      */
     angular
         .module('i3RpsGameApp.game')
         .controller('GameCtrl', GameCtrl);
 
-    GameCtrl.$inject = ['GameService'];
+    GameCtrl.$inject = ['GameService', '$timeout'];
     /* @ngInject */
-    function GameCtrl(GameService) {
+    function GameCtrl(GameService, $timeout) {
         var vm = this,
             shapes = ['r', 's', 'p'];
         vm.chooseShape = chooseShape;
+        vm.computerIsThinking = false;
 
         activate();
 
@@ -31,12 +32,23 @@
 
         function chooseShape(shape) {
             vm.playerShape = shape;
+            vm.computerIsThinking = true;
+
+            $timeout(function() {
+                myFunction();
+            }, 3000);
+        }
+
+        function myFunction() {
             vm.computerShape = computerChooseShape();
             vm.gameResult = getGameResult(vm.playerShape, vm.computerShape);
 
             vm.gameStatus.gameNumber++;
             if (vm.gameResult == 1) { vm.gameStatus.win++; }
             if (vm.gameResult == -1) { vm.gameStatus.lose++; }
+
+            GameService.updateGameStatus();
+            vm.computerIsThinking = false;
         }
 
         function computerChooseShape() {

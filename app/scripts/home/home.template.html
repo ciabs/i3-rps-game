@@ -1,23 +1,13 @@
 <div class="jumbotron">
-    <h1>i3</h1>
-    <div class="row">
-        <div class="col-xs-2 col-xs-offset-3">
-            <i class="fa fa-3x fa-hand-rock-o"></i>
-            <h4>rock</h4>
-        </div>
-        <div class="col-xs-2">
-            <i class="fa fa-3x fa-hand-paper-o"></i>
-            <h4>paper</h4>
-        </div>
-        <div class="col-xs-2">
-            <i class="fa fa-3x fa-hand-scissors-o"></i>
-            <h4>scissors</h4>
-        </div>
-    </div>
+    <h2><i class="fa fa-2x fa-hand-rock-o"></i> x <i class="fa fa-2x fa-hand-paper-o"></i> x <i class="fa fa-2x fa-hand-scissors-o"></i></h2>
+    <h3>the game</h3>
 
     <hr />
 
-    <p><a class="btn btn-lg btn-success" ng-click="homeC.startGame(3)">play best of 3 games</a></p>
-    <p><a class="btn btn-lg btn-success" ng-click="homeC.startGame(5)">play best of 5 games</a></p>
-    <p><a class="btn btn-lg btn-success" ng-click="homeC.startGame(0)">play unlimited games</a></p>
+    <p><a class="btn btn-lg btn-success" ng-click="homeC.startNewGame()">start new game</a></p>
+    <p ng-if="homeC.gameStatus.gameNumber > 0"><a class="btn btn-lg btn-primary" ng-click="homeC.continueGame()">continue game</a></p>
+
+    <hr />
+
+    <h4>high score <span class="label label-info">{{ mainC.highScore }}</span></h4>
 </div>
